@@ -1,5 +1,6 @@
 import { About } from './view/components/about';
 import { Differentials } from './view/components/differentials';
+import { FinalCTA } from './view/components/final-cta';
 import { Location } from './view/components/location';
 import { NewHero } from './view/components/new-hero';
 import { NewServices } from './view/components/new-services';
@@ -18,6 +19,7 @@ function App() {
       <Testimonials />
       <About />
       <Location />
+      <FinalCTA />
     </div>
   );
 }
