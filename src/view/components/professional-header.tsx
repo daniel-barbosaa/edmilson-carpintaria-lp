@@ -1,6 +1,7 @@
 import { Hammer, Menu, MessageCircle, Phone, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 
 export function ProfessionalHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,6 +20,11 @@ export function ProfessionalHeader() {
       'https://wa.me/5538999842884?text=Olá, vi seu site e gostaria de um orçamento',
       '_blank',
     );
+  };
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText('(38) 999842884');
+
+    toast.success('Número copiado!');
   };
 
   const scrollToSection = (sectionId: string) => {
@@ -57,7 +63,7 @@ export function ProfessionalHeader() {
                 <Hammer className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <h1 className="text-lg sm:text-xl font-bold text-[#1E293B] leading-tight">
+                <h1 className="text-lg sm:text-xl font-bold text-foreground leading-tight">
                   Edmilson Carpinteiro
                 </h1>
                 <p className="text-xs sm:text-sm text-subtle hidden sm:block">
@@ -80,8 +86,8 @@ export function ProfessionalHeader() {
 
             <div className="flex items-center gap-4">
               <a
-                href="tel:+5538999842884"
-                className="hidden xl:flex items-center gap-2 text-[#1E293B] hover:text-primary transition-colors"
+                className="hidden xl:flex items-center gap-2 text-foreground hover:text-primary transition-colors"
+                onClick={handleCopy}
               >
                 <Phone className="w-4 h-4" />
                 <span className="font-medium">(38) 99984-2884</span>
@@ -98,7 +104,7 @@ export function ProfessionalHeader() {
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-[#1E293B] hover:bg-[#F8FAFC] rounded-lg transition-colors"
+                className="lg:hidden p-2 text-foreground hover:bg-[#F8FAFC] rounded-lg transition-colors"
                 aria-label="Menu"
               >
                 {mobileMenuOpen ? (
@@ -143,7 +149,7 @@ export function ProfessionalHeader() {
               >
                 <a
                   href="tel:+5538999842884"
-                  className="flex items-center gap-2 px-4 py-3 text-[#1E293B] hover:bg-[#F8FAFC] rounded-lg transition-colors mb-2"
+                  className="flex items-center gap-2 px-4 py-3 text-foreground hover:bg-[#F8FAFC] rounded-lg transition-colors mb-2"
                 >
                   <Phone className="w-5 h-5 text-primary" />
                   <span className="font-medium">(38) 99984-2884</span>

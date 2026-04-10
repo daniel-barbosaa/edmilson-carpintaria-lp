@@ -1,6 +1,8 @@
-import { MessageCircle, Phone } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
+import toast from 'react-hot-toast';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export function FinalCTA() {
   const ref = useRef(null);
@@ -11,6 +13,12 @@ export function FinalCTA() {
       'https://wa.me/5538999842884?text=Olá, vi seu site e gostaria de um orçamento',
       '_blank',
     );
+  };
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText('(38) 999842884');
+
+    toast.success('Número copiado!');
   };
 
   return (
@@ -51,13 +59,13 @@ export function FinalCTA() {
               onClick={handleWhatsAppClick}
               className="flex items-center gap-3 bg-primary hover:bg-[#D97706] text-white px-10 py-5 rounded-lg text-lg font-bold transition-all duration-300 shadow-2xl hover:shadow-primary/50 hover:scale-105 w-full sm:w-auto"
             >
-              <MessageCircle className="w-6 h-6" />
+              <FaWhatsapp className="w-6 h-6" />
               Chamar no WhatsApp
             </button>
 
             <a
-              href="tel:+5538999842884"
               className="flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white px-10 py-5 rounded-lg text-lg font-bold transition-all duration-300 border-2 border-white/30 hover:scale-105 w-full sm:w-auto"
+              onClick={handleCopy}
             >
               <Phone className="w-6 h-6" />
               (38) 99984-2884
