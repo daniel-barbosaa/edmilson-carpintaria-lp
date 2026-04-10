@@ -1,5 +1,6 @@
 import { About } from './view/components/about';
 import { Differentials } from './view/components/differentials';
+import { Location } from './view/components/location';
 import { NewHero } from './view/components/new-hero';
 import { NewServices } from './view/components/new-services';
 import { Portfolio } from './view/components/portfolio';
@@ -16,6 +17,7 @@ function App() {
       <Differentials />
       <Testimonials />
       <About />
+      <Location />
     </div>
   );
 }
