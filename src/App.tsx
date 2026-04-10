@@ -1,3 +1,4 @@
+import { About } from './view/components/about';
 import { Differentials } from './view/components/differentials';
 import { NewHero } from './view/components/new-hero';
 import { NewServices } from './view/components/new-services';
@@ -14,6 +15,7 @@ function App() {
       <Portfolio />
       <Differentials />
       <Testimonials />
+      <About />
     </div>
   );
 }
