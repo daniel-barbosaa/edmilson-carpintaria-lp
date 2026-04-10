@@ -1,3 +1,4 @@
+import { Differentials } from './view/components/differentials';
 import { NewHero } from './view/components/new-hero';
 import { NewServices } from './view/components/new-services';
 import { Portfolio } from './view/components/portfolio';
@@ -10,6 +11,7 @@ function App() {
       <NewHero />
       <NewServices />
       <Portfolio />
+      <Differentials />
     </div>
   );
 }
