@@ -3,6 +3,7 @@ import { NewHero } from './view/components/new-hero';
 import { NewServices } from './view/components/new-services';
 import { Portfolio } from './view/components/portfolio';
 import { ProfessionalHeader } from './view/components/professional-header';
+import { Testimonials } from './view/components/testimonials';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <NewServices />
       <Portfolio />
       <Differentials />
+      <Testimonials />
     </div>
   );
 }
